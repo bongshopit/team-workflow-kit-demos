@@ -6,3 +6,12 @@ It mirrors `inventory-service/docs/api.md`. A change here needs a matching chang
 | Client method | inventory-service operation |
 |---|---|
 | `available(sku)` | `get(sku).available` |
+
+Over HTTP (`InventoryApi`, base URL `quarkus.rest-client.inventory.url`):
+
+| Client method | Route |
+|---|---|
+| `reserve(sku, quantity)` | `POST /products/{sku}/reserve` body `{quantity}` |
+| `release(sku, quantity)` | `POST /products/{sku}/release` body `{quantity}` |
+
+An error from inventory-service keeps its status (404 unknown sku, 409 insufficient stock). An unreachable inventory-service is 503.

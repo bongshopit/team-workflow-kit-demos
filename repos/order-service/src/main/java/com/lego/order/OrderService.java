@@ -1,13 +1,17 @@
 package com.lego.order;
 
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import java.util.HashMap;
 import java.util.Map;
 
+@Singleton
 public class OrderService {
     private final InventoryClient inventory;
     private final Map<String, Order> orders = new HashMap<>();
     private int counter = 0;
 
+    @Inject
     public OrderService(InventoryClient inventory) {
         this.inventory = inventory;
     }

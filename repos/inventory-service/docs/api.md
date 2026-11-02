@@ -1,6 +1,14 @@
 # Inventory service API
 
-Service class: `com.lego.inventory.InventoryService`. Errors are `ApiException` with an HTTP status.
+Service class: `com.lego.inventory.InventoryService`. Errors are `ApiException` with an HTTP status; the HTTP layer returns that status with body `{"error": "..."}`.
+
+## HTTP routes (port 8081)
+| Operation | Route |
+|---|---|
+| addProduct | `POST /products` body `{sku, name, available}` |
+| get | `GET /products/{sku}` |
+| addStock | `POST /products/{sku}/stock` body `{quantity}` |
+| list | `GET /products` |
 
 ## addProduct(sku, name, available)
 - 200: the product

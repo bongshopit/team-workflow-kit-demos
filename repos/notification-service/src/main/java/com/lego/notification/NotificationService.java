@@ -1,8 +1,10 @@
 package com.lego.notification;
 
+import jakarta.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
+@Singleton
 public class NotificationService {
     private final List<Notification> sent = new ArrayList<>();
 

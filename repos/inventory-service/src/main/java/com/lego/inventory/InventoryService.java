@@ -1,10 +1,12 @@
 package com.lego.inventory;
 
+import jakarta.inject.Singleton;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+@Singleton
 public class InventoryService {
     private final Map<String, Product> products = new LinkedHashMap<>();
 
